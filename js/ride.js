@@ -53,6 +53,21 @@ let map;
         pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
         displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.', unicorn.Color);
 
+        
+        switch(unicorn.Name){
+            case 'Harsh':
+                document.getElementById("icicles").play();
+            break;
+            case 'Gaia':
+                document.getElementById("splash").play();
+            break;
+            case 'Mavis':
+                document.getElementById("zoom").play();
+            break;
+            case 'Cosmo':
+                document.getElementById("zip").play();
+            break;
+            }
         /*
         document.getElementById("icicles").src = unicorn.Harsh + '.mp3';
         document.getElementById("splash").src = unicorn.Gaia + '.mp3';
@@ -68,22 +83,6 @@ let map;
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!', unicorn.Color);
             WildRydes.map.unsetLocation();
-
-            switch(unicorn.Name){
-            case 'Harsh':
-                document.getElementById("icicles").play();
-            break;
-            case 'Gaia':
-                document.getElementById("splash").play();
-            break;
-            case 'Mavis':
-                document.getElementById("zoom").play();
-            break;
-            case 'Cosmo':
-                document.getElementById("zip").play();
-            break;
-            }
-
 
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');
